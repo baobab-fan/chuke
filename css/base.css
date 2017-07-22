@@ -1,0 +1,418 @@
+@charset "UTF-8";
+
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+img {border:0;	vertical-align:middle; }  /*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse:collapse;
+    border-spacing: 0;}
+body {
+    font:12px Arial,Verdana,"\5b8b\4f53";
+    color:#333;
+    background: #ffffff;
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a {color:#333; text-decoration:none; }
+a:hover{color:#B71C23;}
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #B71C23!important;}
+
+/*公共类*/
+.container {  /*版心 提取 */
+    width: 980px;
+    margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+
+/*头部区域 #header*/
+/*头部登录*/
+#header{
+    margin-bottom: 30px;
+}
+#header>.login {
+    overflow: hidden;
+    height: 31px;
+    line-height: 31px;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #ccc;
+}
+#header>.login>.container a,#header>.login>.container s{
+    margin-left: 6px;
+}
+#header>.login>.container >.fr .notice{
+    width: 31px;
+    padding-left: 26px;
+    background:url("../images/notice.png") no-repeat 2px -3px;
+}
+#header>.login>.container >.fr .weixinBox{
+    width: 32px;
+    height: 18px;
+    text-align: center;
+}
+#header>.login>.container >.fr .weixin{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("../images/w1.jpg") no-repeat ;
+}
+#header>.login>.container >.fr img{
+    position: absolute;
+    display: none;
+    right: 380px;
+    z-index: 220;
+}
+#header>.login>.container >.fr .weixinBox:hover>img{
+    display: block;
+}
+#header>.login>.container >.fr .weibo{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("../images/w2.jpg") no-repeat;
+}
+#mask{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.5);
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+#loginContent{
+    display: none;
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -200px;
+    border: 1px solid #d1d1d1;
+    background-color: #fff;
+    z-index: 1000;
+}
+#close{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 16px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#loginContent>ul{
+    width: 400px;
+    height: 35px;
+}
+#loginContent>ul li{
+    float: left;
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #f5f5f5;
+    color: #666666;
+    font-size: 14px;
+    border-bottom: 1px solid #d1d1d1;
+    cursor: pointer;
+}
+
+#loginContent ul li.on{
+    background: #b42227;
+    color: #ffffff;
+    font-weight: bolder;
+    border: none;
+}
+#shows div{
+    display: none;
+}
+#shows .show{
+    display: block;
+}
+#shows input{
+    font-size: 14px;
+    width: 360px;
+    height: 45px;
+    margin: 20px 20px 0 20px;
+    padding-left: 8px;
+    border: 1px solid #cbcbcb;
+}
+#shows p{
+    width: 360px;
+    height: 30px;
+    margin: 20px 20px 0 20px;
+}
+#shows p a{
+    float: right;
+    line-height: 30px;
+    color: #b42025;
+    font-size: 14px;
+    font-weight: bolder;
+}
+#shows p a:hover{
+    text-decoration: underline;
+}
+#shows a.loginBtn{
+    display: block;
+    width: 360px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 20px;
+    background-color: #b42227;
+    cursor: pointer;
+}
+#shows a.loginBtn:hover{
+    font-weight: bold;
+}
+/*头部搜索*/
+#header .searchTab{
+    height: 62px;
+    margin: 25px  auto;
+    margin-bottom: 5px;
+}
+#header .searchTab .searchText{
+    width: 249px;
+    height: 27px;
+    padding: 0 5px;
+    line-height: 27px;
+    border: 1px solid #c9caca;
+}
+#header .searchTab .searchBtn{
+    width: 48px;
+    height: 29px;
+    background: url("../images/vanclsprite.png" ) no-repeat -99px 0;
+    cursor: pointer;
+}
+#header .searchTab .shoppingCar{
+    width: 105px;
+    height: 27px;
+    margin-left: 30px;
+    border: 1px solid #c1383e;
+    background: url(http://i2.vanclimg.com/cms/20150228/vanclsprite.png) no-repeat scroll -154px 0px;
+    position: relative;
+    z-index: 10;
+    float: right;
+}
+#header .searchTab .shoppingCar>a{
+    color: #ffffff;
+    position: absolute;
+    top: 7px;
+    left: 40px;
+    cursor: pointer;
+}
+#header .searchTab .hotword{}
+#header .searchTab .hotword li{
+    color: #727171;
+    float: left;
+    margin-top: 7px;
+    margin-right: 18px;
+}
+#header .searchTab .hotword li a{
+    color: #727171;
+}
+/*头部导航条*/
+#header .nav {
+    height: 46px;
+}
+#header .nav .logo{
+    float: left;
+    width: 185px;
+    height: 46px;
+    background: url("../images/logo18546.png") no-repeat center;
+}
+#header .nav .navLine{
+    display: block;
+    height: 16px;
+    width: 1px;
+    border-right: solid 1px #888;
+    position: absolute;
+    right: 1px;
+    top: 5px;
+    overflow: hidden;
+}
+#header .nav>.container>ul{
+    padding-top: 20px;
+}
+#header .nav>.container>ul>li{
+    float: left;
+    width: 78px;
+    line-height: 22px;
+    padding: 0px 0px 10px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    position: relative;
+    z-index: 220;
+}
+
+
+#header .nav .subNav {
+    display: none;
+    position: absolute;
+    margin-top: 5px;
+    border: 1px solid #898989;
+    border-top: 5px solid #B81C22;
+    background-color: #fff;
+    left: -2px;
+}
+
+#header .nav .subNav li{
+    width: 77px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+}
+
+
+    /*客户服务*/
+#service{
+    margin: 30px auto;
+    border: 1px solid #e0e0e1;
+}
+#service .serviceTop{
+    margin: 33px auto 23px;
+}
+#service .serviceTop li{
+    float: left;
+    width: 320px;
+    height: 138px;
+    text-align: center;
+}
+#service .serviceTop li+li{
+    border-left: 1px solid #e0e0e1;
+
+}
+#service .serviceTop li p{
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+#service .serviceTop li .online{
+    margin: 0 auto;
+    width: 156px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    background: #b81c22;
+    color: #ffffff;
+}
+#service .serviceTop .servicePic{
+    margin: 15px auto 30px;
+}
+#service .serviceTop .seven{
+    margin: 15px auto 25px;
+}
+#service .serviceBotton{
+    width: 95%;
+    background-color: #f8f8f8;
+    padding: 9px  0;
+    margin: 17px auto;
+}
+#service .serviceBotton li{
+    float: left;
+    width: 153px;
+    text-align: center;
+    line-height: 26px;
+}
+#service .serviceBotton li+li{
+    border-left: 1px solid #dadadb;
+}
+/*脚注区域*/
+#footer>.copyRight{
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid #3f3b3a;
+}
+#footer>.copyRight p{
+    text-align: center;
+    color: #3e3a39;
+    font-family: "Microsoft YaHei";
+    margin-top: 15px;
+}
+#footer .ralatedLinks{
+    margin: 30px auto;
+    text-align: center;
+}
+#footer .ralatedLinks a,#footer .ralatedLinks span{
+    margin: 0 8px;
+}
+#footer .ralatedLinks .a1{
+    background: url("../images/spritesbgtop.png") no-repeat scroll 0 -581px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 113px;
+}
+#footer .ralatedLinks span{
+    background: url("../images/spritesbgtop.png") no-repeat scroll 0 -629px transparent;
+    display: inline-block;
+    height: 45px;
+    width: 156px;
+}
+#footer .ralatedLinks .a2{
+    background: url("../images/spritesbgtop.png") no-repeat scroll 0 -675px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 96px;
+}
+#footer .ralatedLinks .a3{
+    background: url("../images/spritesbgtop.png") no-repeat scroll -97px -675px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 101px;
+}
+#footer .ralatedLinks .a4{
+    background: url("../images/spritesbgtop.png") no-repeat scroll -202px -675px transparent;
+    display: inline-block;
+    height: 42px;
+    width: 42px;
+}
+/*返回顶部*/
+#popup{
+    display: none;
+    position: fixed;
+    width: 25px;
+    height: 90px;
+    background: url("../images/backtotop.png") no-repeat ;
+    right: 10px;
+    bottom: 10px;
+    z-index:9999;
+}

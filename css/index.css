@@ -1,0 +1,46 @@
+/*主要内容*/
+#main .hotProduct{
+    margin-bottom: 20px;
+}
+#main .hotProduct ul li{
+    float: left;
+    margin-right: 75px;
+}
+#main .hotProduct p{
+    margin-bottom: 10px;
+}
+#main .hotProduct .mPrice{
+    color: #9f9f9f;
+    padding-right: 6px;
+}
+#main .hotProduct .sPrice{
+    color: #a10202;
+    font-weight: bold;
+}
+/*底部搜索框*/
+#searchBox{
+    margin: 30px auto;
+    width: 410px;
+}
+#searchBox input{
+    background: url("../images/sprites_20120420.png") no-repeat 0px -680px;
+    height: 26px;
+    width: 335px;
+    line-height: 26px;
+    padding-left: 5px;
+}
+#searchBox button {
+    background: url("../images/sprites_20120420.png") no-repeat 0px -654px;
+    width: 70px;
+    height: 26px;
+    border: none;
+    cursor: pointer;
+}
+#searchBox .keywords{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 4px;
+}
+#searchBox .keywords a{
+    padding-left: 4px;
+}
